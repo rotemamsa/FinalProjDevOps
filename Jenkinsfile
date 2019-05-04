@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage("GIT clone\pull"){
+        stage("GIT clone or pull"){
             steps{
 			
 				def exists = fileExists 'dir("${JENKINS_HOME}/workspace/devOpsPipe/FinalProjDevOps/dockerTest.py")'
