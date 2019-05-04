@@ -6,4 +6,5 @@ driver.implicitly_wait(10)
 driver.get("http://192.168.99.100:5000/")
 
 text = driver.find_element_by_xpath("//*")
-print(text.text)
+x = text.text.replace('World', '')
+print(x)
