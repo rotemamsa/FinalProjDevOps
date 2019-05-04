@@ -4,19 +4,19 @@ pipeline{
         stage("GIT clone or pull"){
             steps{
 			
-				def exists = fileExists 'dir("${JENKINS_HOME}/workspace/devOpsPipe/FinalProjDevOps/dockerTest.py")'
-				echo exists
-				if (exists) {
+			//	def exists = fileExists 'dir("${JENKINS_HOME}/workspace/devOpsPipe/FinalProjDevOps/dockerTest.py")'
+			//	echo exists
+			//	if (exists) {
 					echo 'git init'
 					bat 'git init'
 					echo 'git pull'
 					bat 'git pull https://github.com/rotemamsa/FinalProjDevOps.git'
-				}
-				else{
-					echo 'git clone'
-				    dir('./FinalProjDevOps')
-				    bat 'git clone https://github.com/rotemamsa/FinalProjDevOps.git'
-				}
+			//	}
+			//	else{
+			//		echo 'git clone'
+			//	    dir('./FinalProjDevOps')
+			//	    bat 'git clone https://github.com/rotemamsa/FinalProjDevOps.git'
+			//	}
 		    }
         }
         stage("run docker-compose"){
