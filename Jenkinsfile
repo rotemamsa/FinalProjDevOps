@@ -21,9 +21,9 @@ pipeline{
         }
         stage("run docker-compose"){
             steps{
-                echo 'docker-machine start'
-                bat 'docker-machine start default'
-               	sleep (time:30, unit:"SECONDS") 
+               // echo 'docker-machine start'
+               // bat 'docker-machine start default'
+               // sleep (time:30, unit:"SECONDS")
                 echo 'docker-compose up'
                 bat 'docker-compose up -d'
              	sleep (time:30, unit:"SECONDS") 
